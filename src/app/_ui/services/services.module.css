@@ -1,0 +1,145 @@
+/* =========================================
+    LES ANIMATIONS
+============================================*/
+@keyframes services {
+  from {
+    scale: 0.8;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes textes {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ******************************************* */
+.section {
+  padding: var(--padding_de_section);
+  width: 100%;
+}
+
+.conteneur_general {
+  max-width: 1400px;
+  margin: var(--margin_conteneur_general);
+  padding: var(--padding_conteneur_general_mobile);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ============================================
+   MOBILE FIRST - Styles de base
+   ============================================ */
+
+.conteneur_texte {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  will-change: transform;
+  animation: textes linear auto both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.conteneur_texte h2 {
+  font-size: var(--font_size_titre_section);
+  font-weight: bold;
+  color: var(--couleur_secondaire);
+}
+
+.conteneur_texte h3 {
+  font-size: var(--font_size_sous_titre_section);
+  font-weight: bold;
+  color: black;
+}
+
+.conteneur_carte_service {
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 1rem;
+}
+
+.carte_service {
+  position: relative;
+  border: 1px solid black;
+  background-color: var(--couleur_principale);
+  clip-path: polygon(89% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  animation: services linear auto both;
+  animation-timeline: view();
+  animation-range: entry calc(5% + (var(--i, 0) * 2%)) cover 30%;
+}
+
+.carte_service:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.conteneur_image {
+  width: 100%;
+  height: 250px;
+
+  overflow: hidden;
+}
+
+.conteneur_image .imgg {
+  object-fit: cover;
+}
+
+.texte {
+  font-weight: 300;
+  font-size: 1.3rem;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  background: var(--couleur_secondaire);
+}
+
+/* ============================================
+   TABLETTE - 768px et plus
+   ============================================ */
+@media (min-width: 768px) {
+  .conteneur_texte {
+    text-align: center;
+  }
+}
+
+/* ============================================
+   DESKTOP - 1200px et plus
+   ============================================ */
+@media (min-width: 1200px) {
+  .conteneur_general {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .conteneur_texte {
+    flex: 0 0 300px;
+    text-align: left;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .conteneur_carte_service {
+    flex: 1;
+  }
+}

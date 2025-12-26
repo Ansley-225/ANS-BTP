@@ -1,0 +1,247 @@
+:root {
+  --image-height-mobile: clamp(250px, 50vh, 350px);
+  --image-height-desktop: clamp(400px, 60vh, 600px);
+  --shadow-hover: 0 10px 25px rgba(247, 107, 21, 0.2);
+}
+
+/* =========================================================
+                LES ANIMATIONS  
+   =========================================================*/
+
+@keyframes gauche {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes droite {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes image {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Section principale */
+.section {
+  padding: 7rem 0;
+  background-color: #e0e0e0ce;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+
+/* Conteneur général */
+.conteneur_general {
+  padding: var(--padding_conteneur_general_mobile);
+  margin: var(--margin_conteneur_general);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+}
+
+/* ============================================
+   MOBILE FIRST - Styles de base
+   ============================================ */
+
+
+.conteneur_textes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 90%;
+}
+.conteneur_texte1 {
+  opacity: 0;
+  padding: var(--padding_conteneur_general);
+  animation: gauche linear auto both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+.conteneur_texte1 h2 {
+  font-size: var(--font_size_h2);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--couleur_secondaire);
+}
+
+.conteneur_texte1 p {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  line-height: 1.3;
+  & span {
+    color: var(--couleur_secondaire);
+  }
+}
+
+.conteneur_texte2 {
+  will-change: transform;
+  animation: droite linear auto both;
+  animation-timeline: view();
+  animation-range: entry  10% cover 30%;
+  width: 90%;
+}
+.conteneur_texte2 p:first-child {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-weight: bold;
+  padding-bottom: 1rem;
+  color: black;
+}
+
+.conteneur_texte2 p:last-child {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: black;
+}
+
+.conteneur_image {
+  margin-top: 2rem;
+  background-image: url("/images/Equipe.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: var(--image-height-mobile);
+  clip-path: polygon(89% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
+  will-change: transform, opacity;
+  width: 100%;
+  animation: image linear auto both;
+  animation-timeline: view();
+  animation-range: entry 1% cover 20%;
+}
+
+.conteneur_chiffres {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conteneur_chiffres div {
+  text-align: center;
+}
+
+.conteneur_chiffres div p:first-child {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: bold;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.conteneur_chiffres div p:last-child {
+  font-size: 4rem;
+  color: black;
+  line-height: 1.4;
+}
+
+/* ============================================
+   TABLETTE - 768px et plus
+   ============================================ */
+@media (min-width: 768px) {
+  .conteneur_texte1 h2 {
+    font-size: 1.5rem;
+  }
+
+  .conteneur_texte2 p:last-child {
+    font-size: 1.25rem;
+  }
+
+  .conteneur_image {
+    height: clamp(350px, 50vh, 450px);
+  }
+
+  .conteneur_chiffres {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .conteneur_chiffres div {
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+
+  .conteneur_chiffres div p:first-child {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  .conteneur_chiffres div p:last-child {
+    font-size: 1.25rem;
+  }
+}
+
+/* ============================================
+   DESKTOP - 1200px et plus
+   ============================================ */
+@media (min-width: 1200px) {
+  .conteneur_general {
+    padding: var(--padding_conteneur_general);
+  }
+  .conteneur_textes {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .conteneur_texte1 h2 {
+    font-size: 1.5rem;
+  }
+
+  .conteneur_texte1 p {
+    font-size: 2rem;
+  }
+
+  .conteneur_texte2 {
+    padding-right: 2rem;
+  }
+
+  .conteneur_texte2 p:first-child {
+    font-size: 1.5rem;
+  }
+
+  .conteneur_texte2 p:last-child {
+    font-size: 1.25rem;
+  }
+
+  .conteneur_image {
+    height: var(--image-height-desktop);
+    clip-path: polygon(92% 0, 100% 12%, 100% 100%, 0 100%, 0 0);
+  }
+
+  .conteneur_chiffres {
+    gap: var(--space-lg);
+  }
+
+  .conteneur_chiffres div {
+    flex: 1 1 250px;
+  }
+
+  .conteneur_chiffres div p:last-child {
+    font-size: 1.25rem;
+  }
+}

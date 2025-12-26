@@ -1,0 +1,108 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Service {
+  id                String               @id @default(cuid()) @map("service_id")
+  titre             String
+  slug              String               @unique
+  description       String
+  image             String
+  image2            String?
+  image3            String?
+  
+ 
+  sousTitre1        String?
+  detailSoutitre1   String?
+  sousTitre2        String?
+  detailSoutitre2   String?
+  
+  modeEmploie       String?
+  detailModeEploie1 String?
+  detailModeEploie2 String?
+
+  realisations                  ServiceRealisation[]
+  realisation_travauxPubilcs  ServiceRealisation_travauxPublics[]
+ serviceRealisationIngenieries ServiceRealisationIngenierie[]
+ 
+  createdAt         DateTime             @default(now()) @map("created_at")
+  updatedAt         DateTime             @updatedAt @map("updated_at")
+
+  @@map("services")
+ 
+}
+
+model ServiceRealisation {
+  id        String   @id @default(cuid()) @map("service_realisation_id")
+  image     String
+  serviceId String   @map("service_id")
+  service   Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@map("service_realisations")
+}
+
+
+model ServiceRealisation_travauxPublics{
+   id          String   @id @default(cuid()) @map("service_realisation_travauxPublics_id")
+   image       String   
+    serviceId  String   @map("service_id")
+     service   Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+}
+
+model ServiceRealisationIngenierie{
+  id           String   @id @default(cuid()) @map("service_realisation_ingenierie_id")
+   image       String   
+    serviceId  String   @map("service_id")
+  service   Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@map("service_realisations_ingenierie")
+    
+    
+    
+}
+
+
+model Realisation{
+  id          String  @id @default(cuid()) @map("realisations_id") 
+  titre       String
+  slug        String @unique
+  image       String
+  description String 
+  dateDebut   String?
+  dateFin     String?
+  superficie  String?
+  lieu        String?
+  client      String?
+  status      String?
+  difficulté  String?
+  solution    String?
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at") @default(now())  
+  
+  @@map("realisations")
+}
+
+model Contact{
+  id          String  @id @default(cuid()) @map("contact_id") 
+  nom         String
+  prenoms     String
+  email       String 
+  telephone   String
+  typeService String
+  message     String
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("contacts")
+}
+
+model newsleatter{
+   id          String  @id @default(cuid()) @map("newsleater") 
+   email String @unique
+}

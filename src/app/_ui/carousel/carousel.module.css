@@ -1,0 +1,41 @@
+.section {
+  width: 100%;
+  padding-top: 5rem;
+
+  & h1 {
+    text-align: center;
+    font-size: 2rem;
+   
+    color: black;
+  }
+ 
+}
+
+.embla {
+max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  align-items: center;
+}
+
+.embla__slide {
+  position: relative;
+  border-radius: 10px;
+  height: 100px;
+  margin-right: 2rem; 
+  flex: 0 0 150px; 
+  min-width: 0;
+  
+}
+
+
+.embla__slide img {
+  border-radius: 10px;
+}

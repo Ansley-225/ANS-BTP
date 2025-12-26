@@ -1,0 +1,86 @@
+/* =========================================================
+     LES ANIMATIONS
+   =========================================================*/
+
+@keyframes image {
+  from {
+ transform:translateX(-100%);
+    opacity: 0;
+  }
+  to {
+   transform:translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes questions {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.section {
+   background-color: #e0e0e0ce;
+  padding: var(--padding_de_section);
+  position: relative;
+  width: 100%;
+  padding: 6rem 0;
+  & {
+    h2 {
+      text-align: center;
+      color: black;
+      font-size: var( --font_size_sous_titre_section);
+      padding: 2rem 0;
+    }
+  }
+}
+.conteneur_general {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  row-gap: 1rem;
+  padding: 0 2rem;
+}
+/* ============================================
+   MOBILE FIRST - Styles de base
+   ============================================ */
+.conteneur_image {
+  position: relative;
+  height: 500px;
+  clip-path: polygon(89% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+  opacity: 0;
+
+  animation: image linear auto both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.conteneur_arcodeon {
+  width: 100%;
+  display: grid;
+  gap: 0.2rem;
+  opacity: 0;
+
+  animation: questions linear auto both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+
+@media (min-width: 1200px) {
+  .conteneur_general {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+
+  .conteneur_image {
+    position: relative;
+  }
+  .conteneur_arcodeon {
+    gap: 0.2rem;
+  }
+}

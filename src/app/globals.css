@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+/* LES COULEURS*********************************** */
+  --couleur_principale: #ffffff;
+  --couleur_secondaire: #e54d2e;
+  --couleur_ternière: #3a5bc7;
+/* *************************************** TEXTES */
+  --font_size_titre_section: 1.25rem;
+  --font_witdh_titre_section: 600;
+  --font_size_sous_titre_section: clamp(1.5rem, 4vw, 2rem);
+  --font_size_h2: 1.25rem;
+  /* ESPACEMENTS********************************** */
+  --padding_de_section: 6rem 0;
+  --padding_conteneur_general_mobile: 0 1rem;
+  --margin_conteneur_general: 0 auto;
+
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: var(  --couleur_principale);
+  color: var(--foreground);
+    overflow-x: hidden;
+
+}

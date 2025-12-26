@@ -1,0 +1,173 @@
+/* =====================================================
+   VARIABLES CSS
+   ===================================================== */
+
+:root {
+  --transition: 0.5s ease;
+  --shadow-hover: 0 10px 25px rgba(247, 107, 21, 0.2);
+}
+/* ================================================
+                   LES ANIMATIONS
+===================================================*/
+@keyframes fondu {
+  from {
+    opacity: 0;
+     transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  
+  }
+}
+
+/* =====================================================
+   MOBILE FIRST - Styles de base (< 668px)
+   ===================================================== */
+
+.section {
+  width: 100%;
+  position: relative;
+
+  padding: var(--padding_de_section);
+}
+
+.conteneur_carte {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 colonne sur mobile */
+  gap: 1.5rem;
+  padding: var(--padding_conteneur_general_mobile);
+  margin: var(--margin_conteneur_general);
+  width: 100%;
+
+}
+
+.carte_valeur {
+  width: 100%;
+  min-height: 280px;
+  height: auto;
+
+  clip-path: polygon(90% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+    background-color: #f9f9f9; /* Ajout d'un fond par défaut */
+  border: 1px solid #eee;    /* Optionnel : pour mieux voir les bords */
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fondu linear auto both;
+  animation-timeline: view();
+ animation-range: entry calc(10% + (var(--i) * 10%)) cover 50%;
+}
+
+/* États interactifs */
+.carte_valeur:hover,
+.carte_valeur:focus-within {
+  background-color: var(--couleur_secondaire);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+.carte_valeur:hover h3,
+.carte_valeur:focus-within h3 {
+  color: white;
+}
+
+.carte_valeur:active {
+  transform: translateY(-2px);
+}
+
+.carte_valeur:focus-visible {
+  outline: 3px solid var(--couleur_secondaire);
+  outline-offset: 4px;
+}
+
+.icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  color: var(--couleur_secondaire);
+
+  transition: transform var(--transition);
+  will-change: transform;
+}
+
+.carte_valeur:hover .icon {
+  transform: rotateY(360deg);
+}
+
+/* Typographie responsive */
+.carte_valeur h3 {
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--couleur_secondaire);
+  transition: color var(--transition);
+}
+
+.carte_valeur p {
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  line-height: 1.6;
+  color: black;
+}
+
+/* =====================================================
+   TABLETTE (≥ 668px)
+   ===================================================== */
+
+@media (min-width: 668px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .conteneur_carte {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .carte_valeur {
+    min-height: 300px;
+  }
+
+  .icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .carte_valeur h3 {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+  }
+}
+
+/* =====================================================
+   DESKTOP (≥ 1024px)
+   ===================================================== */
+
+@media (min-width: 1024px) {
+  .conteneur_carte {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+    padding: var(--padding_conteneur_general_ordinateur);
+  }
+
+  .carte_valeur {
+    /* Clip-path plus prononcé en desktop */
+    clip-path: polygon(83% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
+    min-height: 280px;
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .carte_valeur h3 {
+    font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  }
+}

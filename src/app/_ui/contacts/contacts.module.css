@@ -1,0 +1,383 @@
+/* =========================================================
+                LES ANIMATIONS  
+   =========================================================*/
+
+@keyframes gauche {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes droite {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.section {
+  padding: var(--padding_de_section);
+  background-color: var(--couleur_principale);
+     background-color: #e0e0e0ce;
+}
+
+.conteneur_general {
+  padding: var(--padding_conteneur_general_mobile);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================
+   MOBILE FIRST - Styles de base
+   ============================================ */
+.status {
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 16px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.submit_button {
+  /* Vos styles existants pour le bouton */
+  transition: opacity 0.3s ease;
+}
+/* Conteneur des informations de contact */
+.conteneur_ajouter {
+  width: 100%;
+  margin: 0;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(255, 120, 0, 0.1);
+  height: fit-content;
+
+   animation: gauche linear auto both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+/* Textes d'en-tête */
+.conteneur_textes {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.conteneur_textes h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: orangered;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.conteneur_textes h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Grille des icônes de contact */
+.conteneur_icons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Carte d'information individuelle */
+.conteneur_info_icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #ffe5cc;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.conteneur_info_icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 120, 0, 0.15);
+  border-color: orangered;
+}
+
+/* Icône circulaire */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background: orangered;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 3px 10px rgba(255, 120, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.conteneur_info_icon:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 15px rgba(255, 120, 0, 0.4);
+}
+
+/* Textes d'information */
+.infos {
+  flex: 1;
+}
+
+.infos p:first-child {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: orangered;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 0.5px;
+}
+
+.infos p:last-child {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Formulaire */
+.form {
+  width: 100%;
+  margin: 0;
+  padding: 2rem 1.5rem;
+  background: var(--couleur_secondaire);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+   animation: droite linear auto both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+.form .conteneur_textes {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form .conteneur_textes p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  background-color: var( --couleur_principale);
+  color: var(  --couleur_secondaire);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  margin: 3rem auto;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.conteneur_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  
+}
+
+/* Champ de formulaire individuel */
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color:var(--couleur_principale);
+  margin-bottom: 0.25rem;
+}
+
+/* Styles des inputs */
+.input input,
+.input select,
+.input textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--couleur_principale);
+  border-radius: 8px;
+  font-size: 1rem;
+
+  transition: all 0.3s ease;
+  background: var(--couleur_principale);
+}
+
+.input input:focus,
+.input select:focus,
+.input textarea:focus {
+  outline: none;
+  border-color: black;
+  box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.1);
+}
+
+.input input::placeholder {
+  color: #999;
+}
+
+.input textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.input select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23ff7800' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* ============================================
+   TABLETTE - 768px et plus
+   ============================================ */
+
+@media (min-width: 768px) {
+  .section {
+    padding: 3rem 2rem;
+  }
+
+  .conteneur_ajouter,
+  .form {
+    padding: 2.5rem 2rem;
+  }
+
+  .conteneur_textes h2 {
+    font-size: 2rem;
+  }
+
+  .conteneur_textes h3 {
+    font-size: 1.1rem;
+  }
+
+  .icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    font-size: 1.6rem;
+  }
+
+  .conteneur_info_icon {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .conteneur_icons {
+    gap: 1.25rem;
+  }
+
+  .form .conteneur_textes p {
+    font-size: 1.6rem;
+  }
+}
+
+/* ============================================
+   DESKTOP - 1200px et plus
+   ============================================ */
+/* Petits ordinateurs portables */
+@media (min-width: 1200px) {
+  .conteneur_general {
+    flex-direction: row;
+    margin: var( --margin_conteneur_general);
+    justify-content: center;
+  }
+
+  .conteneur_ajouter,
+  .form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+
+  .conteneur_input {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .conteneur_textes h2 {
+    font-size: 2.5rem;
+  }
+
+  .conteneur_textes h3 {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    font-size: 1.8rem;
+  }
+
+  .conteneur_info_icon {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .conteneur_icons {
+    gap: 1.5rem;
+  }
+
+  .form .conteneur_textes p {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .conteneur_ajouter {
+    padding: 3rem 2rem;
+  }
+}

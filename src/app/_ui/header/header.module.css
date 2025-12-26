@@ -1,0 +1,220 @@
+/* =====================================================
+   MOBILE FIRST - Styles de base (< 668px)
+   ===================================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(13, 13, 13, 0.1);
+  padding: 1rem 1rem;
+  transition: background 0.4s ease, padding 0.4s ease;
+   border-bottom: 1px solid rgb(219, 218, 218); 
+}
+
+.header.headerScroll {
+  background: var(--couleur_secondaire);
+  padding:1rem 2rem;
+}
+
+.conteneur_principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  background-image: url("/images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+  transition: font-size 0.3s ease;
+  width: 95px;
+  height: 65px;
+    transition: all 0.5s ease;
+}
+
+.header.headerScroll .logo {
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s ease;
+}
+
+/* Bouton hamburger */
+.bouton_hamberger {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 12;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.bouton_hamberger:focus {
+  outline: 2px solid var(--couleur_secondaire);
+  outline-offset: 4px;
+}
+
+.bouton_hamberger span {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  transition: top 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bouton_hamberger span:nth-child(1) {
+  top: 0;
+}
+.bouton_hamberger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bouton_hamberger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* État ouvert du hamburger */
+.bouton_hamberger.ouvert span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.bouton_hamberger.ouvert span:nth-child(2) {
+  opacity: 0;
+}
+
+.bouton_hamberger.ouvert span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* Navigation mobile */
+.menu_navigation {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.5s ease;
+  z-index: 11;
+}
+
+.menu_navigation.menuOuvert {
+  right: 0;
+}
+
+.menu_navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu_navigation ul li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu_navigation ul li:hover,
+.menu_navigation ul li:focus {
+  color: #e54d2e;
+  outline: none;
+}
+
+/* =====================================================
+   TABLETTE (≥ 668px)
+   ===================================================== */
+
+@media (min-width: 668px) {
+  .conteneur_principal {
+    padding: 0 2rem;
+  }
+
+  .logo {
+    font-size: 1.75rem;
+  }
+
+  .menu_navigation ul {
+    gap: 2.5rem;
+  }
+
+  .menu_navigation ul li {
+    font-size: 1.75rem;
+    font-weight: 400;
+  }
+}
+
+/* =====================================================
+   DESKTOP (≥ 1200px)
+   ===================================================== */
+
+@media (min-width: 1200px) {
+  .conteneur_principal {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  /* Masquer le hamburger */
+  .bouton_hamberger {
+    display: none;
+  }
+
+  /* Navigation horizontale */
+  .menu_navigation {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding: 0;
+  }
+
+  .menu_navigation ul {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .menu_navigation ul li {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+  }
+
+  /* Styles au scroll */
+  .header.headerScroll {
+   padding:1rem 1rem;
+  }
+
+  .header.headerScroll .menu_navigation ul li {
+    color: white;
+  }
+
+
+  .header.headerScroll .menu_navigation ul li:hover {
+  color:var(--couleur_ternière);
+  }
+}

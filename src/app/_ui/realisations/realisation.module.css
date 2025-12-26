@@ -1,0 +1,167 @@
+/* ==========================================
+            LES ANIMATIONS
+=============================================*/
+
+@keyframes realisations {
+  from {
+scale:0.8;
+    opacity: 0;
+  }
+  to {
+  scale:1;
+    opacity: 1;
+  }
+}
+
+.section {
+  width: 100%;
+  padding: var( --padding_de_section); 
+  position: relative;
+}
+
+.conteneur_general {
+  padding:var(--padding_conteneur_general_mobile);
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ============================================
+   MOBILE FIRST - Styles de base
+   ============================================ */
+.conteneur_textes {
+  margin-bottom: 2rem; 
+  width: 100%;
+  
+  & h2 {
+    width: 100%;
+    color:var(--couleur_secondaire);
+    text-align: center;
+    font-size: var( --font_size_titre_section);
+  }
+  
+  & h3 {
+    font-size:var(--font_size_sous_titre_section); 
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.conteneur_carte_images {
+ 
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.conteneur_image {
+  position: relative;
+  cursor: pointer;
+  background-size: cover;
+  clip-path: polygon(83% 0, 100% 13%, 100% 99%, 0 100%, 1% 0);
+  height: 350px;
+
+  animation: realisations linear auto both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+
+.detail_realisation {
+  position: absolute;
+  visibility: hidden;
+  inset: 0; 
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7); 
+  
+  & p:nth-child(1) {
+    font-size: 1.25rem; 
+    font-weight: bold;
+    color: var(--couleur_principal);
+    background-color: var(--couleur_secondaire);
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  & p:nth-child(2) {
+    font-size: 0.9rem;
+    background-color: white;
+    color: black;
+    padding: 0.25rem 0.75rem;
+  }
+}
+
+/* Alternative au hover pour mobile : active ou classe JS */
+.conteneur_image:hover .detail_realisation,
+.conteneur_image.active .detail_realisation {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ============================================
+   TABLETTE - 768px et plus
+   ============================================ */
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .conteneur_textes {
+    margin-bottom: 2.5rem;
+    
+    & h3 {
+      font-size: 2.25rem;
+    }
+  }
+  
+  .conteneur_image {
+    height: 380px;
+  }
+}
+
+/* ============================================
+   DESKTOP - 1200px et plus
+   ============================================ */
+@media (min-width: 1200px) {
+ 
+  
+  .conteneur_general {
+    padding: 0 2rem;
+  }
+  
+  .conteneur_textes {
+    margin-bottom: 3rem;
+    
+    & h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: start;
+    }
+    
+    & h3 {
+      font-size: 3rem;
+  text-align: start;
+    }
+  }
+  
+  .conteneur_image {
+    height: 400px;
+  }
+  
+  .detail_realisation {
+    & p:nth-child(1) {
+      font-size: 1.5rem;
+    }
+    
+    & p:nth-child(2) {
+      font-size: 1rem;
+    }
+  }
+}
