@@ -38,9 +38,10 @@ export default async function ServicePage({ params }: Params) {
   if (!detail || !detail?.data || !detail?.success) return notFound();
 
   const toutesLesRealisations = [
-    ...detail.data.realisations,
+
     ...detail.data.realisation_travauxPubilcs,
     ...detail.data.serviceRealisationIngenieries,
+    ...detail.data.realisations
   ];
   return (
     <section className={styles.section}>
@@ -90,7 +91,7 @@ export default async function ServicePage({ params }: Params) {
               <h2>{detail.data.sousTitre2}</h2>
               <p>{detail.data.detailSoutitre2}</p>
               <h3>{detail.data.modeEmploie}</h3>
-              <p>{detail.data.detailModeEploie2}</p>
+              <p>{detail.data.detailModeEploie2}</p>²
             </div>
           </div>
         )}
@@ -104,7 +105,7 @@ export default async function ServicePage({ params }: Params) {
                   src={realise.image}
                   alt={`Réalisation pour ${detail.data?.titre} - ${realise.id}`}
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             ))}

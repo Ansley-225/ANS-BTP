@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🏗️ ANS-BTP Site vitrine Dynamique
 
-## Getting Started
+ANS-BTP est un site vitrine dynamique, moderne et entièrement responsive, conçu selon une approche Mobile-first. Il permet de valoriser l'expertise et les réalisations de l'entreprise ANS-BTP tout en facilitant la conversion client grâce à un système intégré de demande de devis en ligne.
 
-First, run the development server:
+🎯 Objectifs du Projet
 
-```bash
+Le site a été développé pour répondre à trois enjeux majeurs:
+1-Visibilité: Présenter l'entreprise et son catalogue de services de manière professionnelle.
+2-Preuve Sociale : Exposer les réalisations récentes via une galerie dynamique.
+3-Conversion : Transformer les visiteurs en clients grâce à un tunnel de demande de devis simplifié.
+
+✨ Fonctionnalités Clés
+
+-📱 Approche Mobile-First : Interface entièrement responsive, optimisée pour une consultation fluide sur smartphone, tablette et desktop.
+-📝 Système de Devis en Ligne : Formulaire intelligent permettant aux clients de décrire leurs besoins et de recevoir une estimation.
+-⚡ Performance SEO : Structure HTML sémantique et optimisation des images pour un référencement naturel efficace.
+-🛠️ Gestion Dynamique des Services : Affichage évolutif des prestations de l'entreprise.
+-🖼️ Portfolio de Réalisations : Presentation des réalisations de l'Entreprise
+
+🛠️ Stack Technique
+
+Voici les technologies utilisées pour ce projet
+
+Frontend :[Next-js,Css modules]
+Backend :[Next-js composant serveur, Prisma , Sqlite]
+
+🚀 Installation locale
+Cloner le dépôt
+
+    bash
+
+1: git clone github.com
+2: Installer les dépendances
+npm install
+3: Configurer l'environnement
+Créez un fichier .env et ajoutez vos clés  
+4: Lancer le projet
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👨‍💻 Auteur
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Nom: Kpi Anselme
+Email: ansley.dev@gmail.com
+tel: +225 01-730-389-35
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+markdown
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?logo=sqlite&logoColor=white)

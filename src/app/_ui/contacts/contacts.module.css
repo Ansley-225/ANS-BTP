@@ -25,13 +25,13 @@
 }
 
 .section {
-  padding: var(--padding_de_section);
   background-color: var(--couleur_principale);
-     background-color: #e0e0e0ce;
+  background-color: #e0e0e0ce;
 }
 
 .conteneur_general {
-  padding: var(--padding_conteneur_general_mobile);
+  padding: 8rem 1rem;
+  /* padding: var(--padding_conteneur_general_mobile); */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -77,7 +77,7 @@
   box-shadow: 0 4px 20px rgba(255, 120, 0, 0.1);
   height: fit-content;
 
-   animation: gauche linear auto both;
+  animation: gauche linear auto both;
   animation-timeline: view();
   animation-range: entry 10% cover 30%;
 }
@@ -185,7 +185,7 @@
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 
-   animation: droite linear auto both;
+  animation: droite linear auto both;
   animation-timeline: view();
   animation-range: entry 10% cover 30%;
 }
@@ -206,8 +206,8 @@
 .button {
   display: flex;
   justify-content: center;
-  background-color: var( --couleur_principale);
-  color: var(  --couleur_secondaire);
+  background-color: var(--couleur_principale);
+  color: var(--couleur_secondaire);
   font-weight: 700;
   padding: 0.75rem 1.5rem;
   margin: 3rem auto;
@@ -222,8 +222,6 @@
   grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 1.5rem;
-
-  
 }
 
 /* Champ de formulaire individuel */
@@ -236,7 +234,7 @@
 .input label {
   font-size: 0.9rem;
   font-weight: 600;
-  color:var(--couleur_principale);
+  color: var(--couleur_principale);
   margin-bottom: 0.25rem;
 }
 
@@ -329,7 +327,7 @@
 @media (min-width: 1200px) {
   .conteneur_general {
     flex-direction: row;
-    margin: var( --margin_conteneur_general);
+    margin: var(--margin_conteneur_general);
     justify-content: center;
   }
 
