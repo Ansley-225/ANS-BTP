@@ -1,4 +1,3 @@
-
 import { Hero } from "@/app/_ui/hero/page";
 import { Valeurs } from "./_ui/valeurs/page";
 import { Presentation } from "./_ui/presentation/page";
@@ -9,9 +8,14 @@ import { Carousel } from "./_ui/carousel/page";
 import { Temoignages } from "./_ui/temoignages/page";
 import { Contacts } from "./_ui/contacts/page";
 import { Footer } from "./_ui/footer/page";
+import { Header } from "./_ui/header/header";
+import { Contact } from "../app/_ui/contact_header/page";
+
 export default function PageAcceuil() {
   return (
     <>
+      <Contact />
+      <Header />
       <Hero />
       <Valeurs />
       <main>
@@ -23,6 +27,7 @@ export default function PageAcceuil() {
         <Temoignages />
         <Contacts />
       </main>
+      <Footer />
     </>
   );
 }

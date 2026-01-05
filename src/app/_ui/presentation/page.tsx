@@ -45,12 +45,12 @@ export function Presentation(): ReactElement {
             </p>
           </div>
 
-          <div>
+           <div>
             <AutoStartCounter chiffre={90} motCle="%" />
             <p style={{ fontSize: "2rem", fontWeight: "bold" }}>
               Satisfaction client
             </p>
-          </div>
+          </div> 
         </div>
       </div>
     </section>

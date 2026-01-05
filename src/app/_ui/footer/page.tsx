@@ -3,6 +3,9 @@
 import { useState } from "react";
 import styles from "./footer.module.css";
 import { Newsleatter } from "@/actionServer/newsletter";
+import { FaFacebook } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -63,7 +66,7 @@ export function Footer() {
             <form className={styles.newsletterForm} onSubmit={handleSubmit}>
               <input
                 type="email"
-                placeholder="Votre adresse email"
+                placeholder="votre email"
                 className={styles.input}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -103,13 +106,13 @@ export function Footer() {
             </p>
             <div className={styles.socialLinks}>
               <a href="#" className={styles.socialIcon}>
-                f
+               <FaFacebook/>
               </a>
               <a href="#" className={styles.socialIcon}>
-                in
+              <IoLogoWhatsapp/>
               </a>
               <a href="#" className={styles.socialIcon}>
-                ✉
+             <MdEmail/>
               </a>
             </div>
           </div>

@@ -24,9 +24,11 @@ export function Header() {
   const fermerMenu = () => setMenuOuvert(false);
 
   return (
+    
     <header
       className={`${styles.header} ${scrollActif ? styles.headerScroll : ""}`}
     >
+    
       <div className={styles.conteneur_principal}>
         <Link href="/" onClick={fermerMenu}>
           <div className={styles.logo}></div>

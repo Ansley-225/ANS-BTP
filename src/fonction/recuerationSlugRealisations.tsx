@@ -1,21 +1,12 @@
 import { cache } from "react";
 import { prisma } from "../../lib/db";
 
-
-
 interface Realisation {
   id: string;
   titre: string;
   slug: string;
   image: string;
   description: string;
-  
-}
-
-interface RetourPromise {
-  success: boolean;
-  data: Realisation | null;
-  erreur: string;
   dateDebut?: string | null;
   dateFin?: string | null;
   superficie?: string | null;
@@ -26,7 +17,12 @@ interface RetourPromise {
   solution?: string | null;
 }
 
-
+interface RetourPromise {
+  success: boolean;
+  data: Realisation | null;
+  erreur: string;
+  
+}
 
 export const recuperationSlug = cache(
   async (slug: string): Promise<RetourPromise> => {

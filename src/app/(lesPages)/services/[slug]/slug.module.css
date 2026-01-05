@@ -1,46 +1,52 @@
+/* =====================================================
+   MOBILE (Style par défaut)
+   ===================================================== */
 .section {
   background-color: aliceblue;
-  padding-top: 2rem;
+  padding-top: 1rem;
   position: relative;
   top: 0;
-  margin-top: 5rem;
   width: 100%;
 }
+
 .conteneur_general {
-  max-width: 1200px;
-  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
+
 .conteneur_slid {
   position: relative;
   top: 0;
   width: 100%;
-  height: 25rem;
+  height: 18rem;
   background-color: black;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  & h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6rem;
-    color: white;
-    position: absolute;
-    z-index: 3;
+}
 
-    margin: 0;
-    font-size: 3.5rem;
-    font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  & .chapelur {
-    color: #e54d2e;
-  }
+.conteneur_slid h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  color: white;
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.conteneur_slid .chapelur {
+  color: #e54d2e;
 }
 
 .overlay {
@@ -56,139 +62,305 @@
   );
   z-index: 2;
 }
+
+/* ========== CONSTRUCTION ========== */
 .construction {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0 1rem;
-  padding-top: 4rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 0;
 }
+
 .texte_construction {
   width: 100%;
-  & h2 {
-    color: black;
-    font-size: 2rem;
-    font-weight: 500;
-    text-align: center;
-  }
-  & p {
-    color: gray;
-    padding: 1rem;
-  }
-  & h3 {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
 }
+
+.texte_construction h2 {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.texte_construction p {
+  color: gray;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.texte_construction h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
 .image_construction {
-  width: 90%;
-  height: 400px;
+  width: 100%;
+  height: 250px;
   background-color: black;
   position: relative;
   top: 0;
-  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
 }
-/* ==========styles renovation========= */
+
+/* ========== RÉNOVATION ========== */
 .renovation {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 5rem 0;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem 0;
 }
+
 .image_renovation {
-  filter: drop-shadow(1px 10px 11px rgba(0, 0, 0, 0.7));
-  width: 90%;
-  height: 100px;
+  filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
+  width: 100%;
+  height: 250px;
   background-color: black;
   position: relative;
   top: 0;
-  width: 100%;
-  height: 400px;
 }
+
 .texte_renovation {
   width: 100%;
-  & h2 {
-    color: black;
-    font-size: 2rem;
-    font-weight: 500;
-    text-align: center;
-  }
-  & p {
-    color: gray;
-    padding: 1rem;
-  }
-  & h3 {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
 }
-/* ================================== */
+
+.texte_renovation h2 {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.texte_renovation p {
+  color: gray;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.texte_renovation h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
+/* ========== RÉALISATIONS ========== */
 .realisation_construction_renovation {
   background-color: white;
-  padding-top: 6rem;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
-  & h2 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 500;
-  }
 }
+
+.realisation_construction_renovation h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
 .conteneur_realisations {
-  padding-top: 4rem;
+  padding-top: 2rem;
   width: 100%;
   display: grid;
-  gap: 2.5rem;
-
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-
-  .image {
-    position: relative;
-
-    cursor: pointer;
-    clip-path: polygon(84% 0, 100% 22%, 100% 100%, 0 100%, 0 0);
-    object-fit: cover;
-    background-color: black;
-    width: 350px;
-    height: 350px;
-  }
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
+
+.conteneur_realisations .image {
+  position: relative;
+  cursor: pointer;
+  clip-path: polygon(84% 0, 100% 22%, 100% 100%, 0 100%, 0 0);
+  object-fit: cover;
+  background-color: black;
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+}
+
+/* ========== CTA ========== */
 .conteneur_cta {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   position: relative;
   background-color: #e54d2e;
-  width: 50%;
-  height: 20rem;
-  margin: 4rem auto;
+  width: 90%;
+  min-height: 18rem;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteneur_cta h2 {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.conteneur_cta .cta {
+  width: 100%;
+  max-width: 250px;
+  filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
+  background-color: white;
+  height: 70px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  & h2 {
-    color: black;
-    font-size: 1.3rem;
-    font-weight: bolder;
+  transition: all 0.3s ease;
+}
+
+.conteneur_cta .cta:hover {
+  background-color: #e54d2e;
+  border: 2px solid white;
+  color: white;
+}
+
+/* =====================================================
+   TABLETTE (≥ 668px)
+   ===================================================== */
+@media (min-width: 668px) {
+  .section {
+    padding-top: 1.5rem;
   }
-  & .cta {
-    width: 250px;
-    filter: drop-shadow(1px 10px 11px rgba(0, 0, 0, 0.7));
-    background-color: white;
-    height: 70px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &:hover {
-      background-color: #e54d2e;
-      border: 2px solid white;
-      color: white;
-    }
+
+  .conteneur_slid {
+    height: 22rem;
+  }
+
+  .conteneur_slid h1 {
+    font-size: 2.8rem;
+    gap: 4rem;
+  }
+
+  .construction,
+  .renovation {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 3rem 1rem;
+  }
+
+  .texte_construction h2,
+  .texte_renovation h2 {
+    font-size: 1.8rem;
+  }
+
+  .image_construction,
+  .image_renovation {
+    height: 350px;
+    width: 50%;
+  }
+
+  .conteneur_realisations {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .conteneur_realisations .image {
+    height: 320px;
+  }
+
+  .conteneur_cta {
+    width: 70%;
+  }
+
+  .conteneur_cta h2 {
+    font-size: 1.3rem;
+  }
+
+  .conteneur_cta .cta {
+    font-size: 1.4rem;
   }
 }
+
+/* =====================================================
+   DESKTOP (≥ 1200px)
+   ===================================================== */
+@media (min-width: 1200px) {
+  .section {
+    padding-top: 2rem;
+  }
+
+  .conteneur_general {
+    max-width: 1200px;
+  }
+
+  .conteneur_slid {
+    height: 25rem;
+  }
+
+  .conteneur_slid h1 {
+    font-size: 3.5rem;
+    gap: 6rem;
+  }
+
+  .construction {
+    padding: 4rem 1rem;
+  }
+
+  .renovation {
+    padding: 5rem 1rem;
+  }
+
+  .texte_construction h2,
+  .texte_renovation h2 {
+    font-size: 2rem;
+  }
+
+  .texte_construction h3,
+  .texte_renovation h3 {
+    font-size: 1.2rem;
+  }
+
+  .image_construction,
+  .image_renovation {
+    height: 400px;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7));
+  }
+
+  .realisation_construction_renovation {
+    padding-top: 6rem;
+  }
+
+  .realisation_construction_renovation h2 {
+    font-size: 2rem;
+  }
+
+  .conteneur_realisations {
+    padding-top: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .conteneur_realisations .image {
+    width: 350px;
+    height: 350px;
+  }
+
+  .conteneur_cta {
+    width: 50%;
+    height: 20rem;
+    margin: 4rem auto;
+  }
+
+  .conteneur_cta h2 {
+    font-size: 1.3rem;
+  }
+
+  .conteneur_cta .cta {
+    font-size: 1.5rem;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.7));
+  }
+}
+
+

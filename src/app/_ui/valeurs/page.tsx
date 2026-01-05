@@ -8,30 +8,31 @@ export function Valeurs(): ReactElement {
       id: 1,
       icon: "/images/icons/fiabilité.png",
       titre: "fiabilité",
-      description: "Description de la fiabilité",
+     
     },
     {
       id: 2,
       icon: "/images/icons/exigence.png",
       titre: "Qualité",
-      description: "Description de la qalité",
+     
     },
     {
       id: 3,
       icon: "/images/icons/ecoute2.png",
       titre: "Écoute",
-      description: "Description de l'écoute",
+      
     },
     {
       id: 4,
       icon: "/images/icons/delais.png",
       titre: "Délais",
-      description: "Description du delais",
+     
     },
   ];
 
   return (
     <section className={styles.section}>
+     
       <div className={styles.conteneur_carte}>
         {noValeurs.map((valeur, index) => (
           <div
@@ -49,7 +50,7 @@ export function Valeurs(): ReactElement {
               />
             </div>
             <h3>{valeur.titre}</h3>
-            <p>{valeur.description}</p>
+           
           </div>
         ))}
       </div>

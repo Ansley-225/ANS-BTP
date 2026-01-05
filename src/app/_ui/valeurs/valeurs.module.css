@@ -34,8 +34,9 @@
 
 .conteneur_carte {
   display: grid;
-  grid-template-columns: 1fr; /* 1 colonne sur mobile */
-  gap: 1.5rem;
+  grid-template-columns: repeat(4,0.7fr); 
+  justify-content: center;
+  gap: 0.5rem;
   padding: var(--padding_conteneur_general_mobile);
   margin: var(--margin_conteneur_general);
   width: 100%;
@@ -44,13 +45,10 @@
 
 .carte_valeur {
   width: 100%;
-  min-height: 280px;
-  height: auto;
-
+  min-height: 150px;
   clip-path: polygon(90% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
-    background-color: #f9f9f9; /* Ajout d'un fond par défaut */
-  border: 1px solid #eee;    /* Optionnel : pour mieux voir les bords */
- 
+  background-color: #e0e0e0; 
+  border: 1px solid #eee;    
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,16 +64,14 @@
 }
 
 /* États interactifs */
-.carte_valeur:hover,
 .carte_valeur:focus-within {
-  background-color: var(--couleur_secondaire);
   box-shadow: var(--shadow-hover);
   transform: translateY(-5px);
 }
 
 .carte_valeur:hover h3,
 .carte_valeur:focus-within h3 {
-  color: white;
+  color: red;
 }
 
 .carte_valeur:active {
@@ -97,15 +93,13 @@
   will-change: transform;
 }
 
-.carte_valeur:hover .icon {
-  transform: rotateY(360deg);
-}
+
 
 /* Typographie responsive */
 .carte_valeur h3 {
   font-size: clamp(1.1rem, 4vw, 1.3rem);
   font-weight: 600;
-  margin-bottom: 1.5rem;
+margin-top: 1rem;
   color: var(--couleur_secondaire);
   transition: color var(--transition);
 }
@@ -126,13 +120,13 @@
   }
 
   .conteneur_carte {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     padding: 0 2rem;
   }
 
   .carte_valeur {
-    min-height: 300px;
+    min-height: 200px;
   }
 
   .icon {
@@ -146,10 +140,10 @@
 }
 
 /* =====================================================
-   DESKTOP (≥ 1024px)
+   DESKTOP (≥ 1200px)
    ===================================================== */
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .conteneur_carte {
     grid-template-columns: repeat(4, 1fr);
     max-width: 1400px;
@@ -161,6 +155,7 @@
     clip-path: polygon(83% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
     min-height: 280px;
   }
+ 
 
   .icon {
     width: 80px;

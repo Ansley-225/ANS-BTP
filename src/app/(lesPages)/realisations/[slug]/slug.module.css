@@ -20,8 +20,9 @@
 
 .conteneur_image {
   position: relative;
-  height: 600px;
-  width: 100%;
+  height: 300px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .h1 {
@@ -36,27 +37,32 @@
 }
 
 .conteneur_info_construction {
-  display: flex;
+
+  display: grid;
+  grid-template-columns: repeat(2,0.5fr);
+ margin-top: 1.5rem;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+ justify-content: center;
+ align-items: center;
   gap: 0.5rem;
   width: 100%;
 }
 
 .icon {
   background: var(--couleur_secondaire);
-  color: var(--couleur_principale);
+  color:black;
   clip-path: polygon(84% 0, 100% 23%, 100% 100%, 0 99%, 0 0);
-
-  min-width: 200px;
+  font-weight: bold;
+ 
   height: 3rem;
-  display: flex;
+  display: grid;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-
+.p{
+  color: white;
+}
 .conteneur_description {
   margin-top: 2rem;
   text-align: center;
@@ -111,17 +117,15 @@
 }
 
 /* ==========================================
-   TABLETTE - 768px et plus
+   TABLETTE - 668px et plus
 ========================================== */
 
-@media (min-width: 768px) {
+@media (min-width: 668px) {
   .conteneur_info {
-    min-height: 500px;
+  
   }
 
-  .icon {
-    width: calc(33.333% - 1rem);
-  }
+
 
   .conteneur_cta h2 {
     font-size: 1.5rem;
@@ -129,7 +133,7 @@
 }
 
 /* ==========================================
-   DESKTOP - 1200px et plus
+   DESKTOP - 1200px 
 ========================================== */
 
 @media (min-width: 1200px) {
@@ -137,7 +141,12 @@
     margin: var(--margin_conteneur_general);
     padding: 3rem;
   }
+.conteneur_image {
 
+  height: 500px;
+  width: 100%;
+ 
+}
   .second_conteneur_general {
     display: flex;
     flex-direction: row;
@@ -150,8 +159,9 @@
   }
 
   .icon {
-    width: 40%;
-    flex-direction: column;
+    width: 200px;
+    height: 50px;
+   
   }
 
   .conteneur_cta {
