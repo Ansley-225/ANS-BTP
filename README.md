@@ -1,51 +1,125 @@
-🏗️ ANS-BTP Site vitrine Dynamique
+# 🏗️ ANS-BTP — Site Vitrine Dynamique
 
-ANS-BTP est un site vitrine dynamique, moderne et entièrement responsive, conçu selon une approche Mobile-first. Il permet de valoriser l'expertise et les réalisations de l'entreprise ANS-BTP tout en facilitant la conversion client grâce à un système intégré de demande de devis en ligne.
-
-🎯 Objectifs du Projet
-
-Le site a été développé pour répondre à trois enjeux majeurs:
-1-Visibilité: Présenter l'entreprise et son catalogue de services de manière professionnelle.
-2-Preuve Sociale : Exposer les réalisations récentes via une galerie dynamique.
-3-Conversion : Transformer les visiteurs en clients grâce à un tunnel de demande de devis simplifié.
-
-✨ Fonctionnalités Clés
-
--📱 Approche Mobile-First : Interface entièrement responsive, optimisée pour une consultation fluide sur smartphone, tablette et desktop.
--📝 Système de Devis en Ligne : Formulaire intelligent permettant aux clients de décrire leurs besoins et de recevoir une estimation.
--⚡ Performance SEO : Structure HTML sémantique et optimisation des images pour un référencement naturel efficace.
--🛠️ Gestion Dynamique des Services : Affichage évolutif des prestations de l'entreprise.
--🖼️ Portfolio de Réalisations : Presentation des réalisations de l'Entreprise
-
-🛠️ Stack Technique
-
-Voici les technologies utilisées pour ce projet
-
-Frontend :[Next-js,Css modules]
-Backend :[Next-js composant serveur, Prisma , Sqlite]
-
-🚀 Installation locale
-Cloner le dépôt
-
-    bash
-
-1: git clone github.com
-2: Installer les dépendances
-npm install
-3: Configurer l'environnement
-Créez un fichier .env et ajoutez vos clés  
-4: Lancer le projet
-npm run dev
-
-👨‍💻 Auteur
-
-Nom: Kpi Anselme
-Email: ansley.dev@gmail.com
-tel: +225 01-730-389-35
-
-markdown
+Un site vitrine **moderne**, **responsive** et **orienté conversion**, conçu selon une approche **Mobile-First** pour valoriser l'expertise et les réalisations de l'entreprise ANS-BTP.
 
 ![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?logo=sqlite&logoColor=white)
+
+---
+
+## Ce que fait l'application
+
+ANS-BTP est une plateforme vitrine dynamique qui répond à trois enjeux stratégiques :
+
+1. **Visibilité** — Présenter l'entreprise et son catalogue de services de manière professionnelle.
+2. **Preuve sociale** — Exposer les réalisations récentes via une galerie dynamique et évolutive.
+3. **Conversion** — Transformer les visiteurs en clients grâce à un tunnel de demande de devis simplifié.
+
+---
+
+## Fonctionnalités clés
+
+- 📱 **Mobile-First** — Interface entièrement responsive, optimisée pour smartphone, tablette et desktop.
+- 📝 **Demande de devis en ligne** — Formulaire intelligent permettant aux clients de décrire leurs besoins et de recevoir une estimation.
+- ⚡ **Performance & SEO** — Structure HTML sémantique et images optimisées pour un référencement naturel efficace.
+- 🛠️ **Gestion dynamique des services** — Affichage évolutif des prestations de l'entreprise.
+- 🖼️ **Portfolio de réalisations** — Présentation visuelle des chantiers et projets terminés.
+
+---
+
+## Démarrage rapide
+
+### 1. Cloner le dépôt
+
+```bash
+git clone https://github.com/Ansley-225/ans-btp.git
+cd ans-btp
+```
+
+### 2. Installer les dépendances
+
+```bash
+npm install
+```
+
+### 3. Configurer l'environnement
+
+```bash
+cp .env.example .env
+```
+
+Renseignez ensuite les variables nécessaires dans le fichier `.env` :
+
+```env
+DATABASE_URL="file:./dev.db"
+# Ajoutez ici toute autre variable requise
+```
+
+### 4. Initialiser la base de données
+
+```bash
+npx prisma migrate dev
+```
+
+### 5. Lancer le projet
+
+```bash
+npm run dev
+```
+
+L'application est disponible sur [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Structure du projet
+
+```
+├── app/
+│   ├── page.tsx           # Page d'accueil
+│   ├── services/          # Pages des services
+│   ├── realisations/      # Galerie des réalisations
+│   └── devis/             # Formulaire de devis
+├── components/            # Composants réutilisables
+├── lib/                   # Utilitaires et configuration Prisma
+├── prisma/
+│   └── schema.prisma      # Schéma de la base de données
+├── public/                # Assets statiques
+└── styles/                # CSS Modules
+```
+
+---
+
+## Stack technique
+
+| Technologie | Rôle |
+|---|---|
+| [Next.js](https://nextjs.org/) | Framework fullstack (App Router) |
+| [TypeScript](https://www.typescriptlang.org/) | Langage principal |
+| [CSS Modules](https://nextjs.org/docs/app/building-your-application/styling/css-modules) | Styles scopés par composant |
+| [Prisma](https://www.prisma.io/) | ORM pour la gestion des données |
+| [SQLite](https://www.sqlite.org/) | Base de données légère et embarquée |
+
+---
+
+## Comment personnaliser
+
+1. **Modifier les services** — Éditez les données dans la base via Prisma Studio : `npx prisma studio`.
+2. **Ajouter des réalisations** — Insérez de nouvelles entrées depuis l'interface d'administration ou directement via Prisma.
+3. **Changer le style** — Les styles sont scopés par composant dans les fichiers `.module.css`, modifiables indépendamment.
+4. **Étendre le formulaire de devis** — Ajoutez des champs dans le schéma Prisma et mettez à jour le composant correspondant.
+
+---
+
+## Auteur
+
+**Kpi Anselme**
+- 📧 [ansley.dev@gmail.com](mailto:ansley.dev@gmail.com)
+- 📞 +225 01-730-389-35
+
+---
+
+## Licence
+
+MIT — libre d'utilisation, de modification et de distribution.
